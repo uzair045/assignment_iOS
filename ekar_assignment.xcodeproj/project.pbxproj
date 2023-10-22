@@ -41,6 +41,7 @@
 		2463147E2AE51DE60001C93D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463147D2AE51DE60001C93D /* Services.swift */; };
 		246314802AE523D40001C93D /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463147F2AE523D40001C93D /* Loader.swift */; };
 		246314832AE5240A0001C93D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246314822AE5240A0001C93D /* UIView+Extensions.swift */; };
+		9B97FD5C16DB0A857FC86016 /* Pods_ekar_assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398C8A135C06D539E4EF9DED /* Pods_ekar_assignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,9 @@
 		2463147D2AE51DE60001C93D /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		2463147F2AE523D40001C93D /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		246314822AE5240A0001C93D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2C9BAEFB309B64ECE8787022 /* Pods-ekar_assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ekar_assignment.debug.xcconfig"; path = "Target Support Files/Pods-ekar_assignment/Pods-ekar_assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		398C8A135C06D539E4EF9DED /* Pods_ekar_assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ekar_assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECED8E504373C89A6E4C3AF4 /* Pods-ekar_assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ekar_assignment.release.xcconfig"; path = "Target Support Files/Pods-ekar_assignment/Pods-ekar_assignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B97FD5C16DB0A857FC86016 /* Pods_ekar_assignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +103,8 @@
 			children = (
 				2463140A2ADDAF1B0001C93D /* ekar_assignment */,
 				246314092ADDAF1B0001C93D /* Products */,
+				C718C15904B57B9E8A4A088A /* Pods */,
+				D444C70DB296A3F97721EC5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,6 +342,24 @@
 			path = ImagePickerManager;
 			sourceTree = "<group>";
 		};
+		C718C15904B57B9E8A4A088A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C9BAEFB309B64ECE8787022 /* Pods-ekar_assignment.debug.xcconfig */,
+				ECED8E504373C89A6E4C3AF4 /* Pods-ekar_assignment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D444C70DB296A3F97721EC5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				398C8A135C06D539E4EF9DED /* Pods_ekar_assignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,9 +367,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2463141C2ADDAF1D0001C93D /* Build configuration list for PBXNativeTarget "ekar_assignment" */;
 			buildPhases = (
+				3F4395402A9155205BB62571 /* [CP] Check Pods Manifest.lock */,
 				246314042ADDAF1B0001C93D /* Sources */,
 				246314052ADDAF1B0001C93D /* Frameworks */,
 				246314062ADDAF1B0001C93D /* Resources */,
+				6D3650AAB679F0F74D19DD35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,6 +433,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F4395402A9155205BB62571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ekar_assignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D3650AAB679F0F74D19DD35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ekar_assignment/Pods-ekar_assignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ekar_assignment/Pods-ekar_assignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ekar_assignment/Pods-ekar_assignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		246314042ADDAF1B0001C93D /* Sources */ = {
@@ -578,6 +647,7 @@
 		};
 		2463141D2ADDAF1D0001C93D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C9BAEFB309B64ECE8787022 /* Pods-ekar_assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -608,6 +678,7 @@
 		};
 		2463141E2ADDAF1D0001C93D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECED8E504373C89A6E4C3AF4 /* Pods-ekar_assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
