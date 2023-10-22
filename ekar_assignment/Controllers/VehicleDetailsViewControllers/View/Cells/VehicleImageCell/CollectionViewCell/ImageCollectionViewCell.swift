@@ -19,7 +19,7 @@ class ImageCollectionViewCell: StandardCollectionViewCell {
 
     override func configureCell() {
         if let model = cellModel as? ImageCollectionViewCellModel {
-//            self.image.load
+            self.image.image = UIImage(named: model.image)
         }
     }
 }
@@ -32,7 +32,6 @@ final class ImageCollectionViewCellModel: StandardCellModel {
         self.image = image
         super.init(actions: actions)
     }
-    
     
     override func reusableIdentifier() -> String {
         return ImageCollectionViewCell.identifier()

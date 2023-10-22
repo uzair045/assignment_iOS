@@ -23,7 +23,6 @@ class MapViewController: UIViewController {
         setupUI()
         
         mapView.delegate = self
-        mapView.showsUserLocation = true
         
         locationManager.delegate = self
         locationManager.requestLocationPermission()

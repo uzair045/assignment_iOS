@@ -37,6 +37,10 @@
 		246314752AE47E6A0001C93D /* AboutVehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246314732AE47E6A0001C93D /* AboutVehicleTableViewCell.swift */; };
 		246314762AE47E6A0001C93D /* AboutVehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 246314742AE47E6A0001C93D /* AboutVehicleTableViewCell.xib */; };
 		246314792AE510740001C93D /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246314782AE510740001C93D /* OnboardViewController.swift */; };
+		2463147C2AE51BF90001C93D /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463147B2AE51BF90001C93D /* ImagePickerManager.swift */; };
+		2463147E2AE51DE60001C93D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463147D2AE51DE60001C93D /* Services.swift */; };
+		246314802AE523D40001C93D /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2463147F2AE523D40001C93D /* Loader.swift */; };
+		246314832AE5240A0001C93D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246314822AE5240A0001C93D /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +76,10 @@
 		246314732AE47E6A0001C93D /* AboutVehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVehicleTableViewCell.swift; sourceTree = "<group>"; };
 		246314742AE47E6A0001C93D /* AboutVehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutVehicleTableViewCell.xib; sourceTree = "<group>"; };
 		246314782AE510740001C93D /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		2463147B2AE51BF90001C93D /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		2463147D2AE51DE60001C93D /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		2463147F2AE523D40001C93D /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		246314822AE5240A0001C93D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,7 @@
 		246314272ADDC08D0001C93D /* CustomManagers */ = {
 			isa = PBXGroup;
 			children = (
+				2463147A2AE51BEB0001C93D /* ImagePickerManager */,
 				246314202ADDB07F0001C93D /* LocationManager */,
 			);
 			path = CustomManagers;
@@ -287,6 +296,7 @@
 			children = (
 				2463146D2AE4600F0001C93D /* UIViewControllers+Extensions.swift */,
 				246314702AE4762D0001C93D /* UINavigationItemExtension.swift */,
+				246314822AE5240A0001C93D /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +304,8 @@
 		2463146F2AE4604E0001C93D /* HelperClasses */ = {
 			isa = PBXGroup;
 			children = (
+				2463147D2AE51DE60001C93D /* Services.swift */,
+				2463147F2AE523D40001C93D /* Loader.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -313,6 +325,14 @@
 				246314782AE510740001C93D /* OnboardViewController.swift */,
 			);
 			path = OnboardViewController;
+			sourceTree = "<group>";
+		};
+		2463147A2AE51BEB0001C93D /* ImagePickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				2463147B2AE51BF90001C93D /* ImagePickerManager.swift */,
+			);
+			path = ImagePickerManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +414,7 @@
 			files = (
 				246314752AE47E6A0001C93D /* AboutVehicleTableViewCell.swift in Sources */,
 				246314342AE0455D0001C93D /* NetworkManager.swift in Sources */,
+				246314832AE5240A0001C93D /* UIView+Extensions.swift in Sources */,
 				246314492AE052A60001C93D /* SliderTableViewCell.swift in Sources */,
 				2463143E2AE0492C0001C93D /* ImageCollectionViewCell.swift in Sources */,
 				246314222ADDB0990001C93D /* LocationManager.swift in Sources */,
@@ -403,8 +424,10 @@
 				246314792AE510740001C93D /* OnboardViewController.swift in Sources */,
 				246314692AE061A80001C93D /* Equipment.swift in Sources */,
 				246314442AE04D650001C93D /* PriceTableViewCell.swift in Sources */,
+				2463147C2AE51BF90001C93D /* ImagePickerManager.swift in Sources */,
 				2463142F2ADDC4680001C93D /* VehicleDetailsViewModel.swift in Sources */,
 				2463144E2AE0537C0001C93D /* BookingFeeTableViewCell.swift in Sources */,
+				246314802AE523D40001C93D /* Loader.swift in Sources */,
 				2463142A2ADDC3F20001C93D /* StandardCell.swift in Sources */,
 				246314252ADDBB3C0001C93D /* VehicleDetailsViewController.swift in Sources */,
 				2463140C2ADDAF1B0001C93D /* AppDelegate.swift in Sources */,
@@ -412,6 +435,7 @@
 				2463142C2ADDC41B0001C93D /* StandardCellMVVM.swift in Sources */,
 				2463140E2ADDAF1B0001C93D /* SceneDelegate.swift in Sources */,
 				246314712AE4762D0001C93D /* UINavigationItemExtension.swift in Sources */,
+				2463147E2AE51DE60001C93D /* Services.swift in Sources */,
 				246314662AE061A80001C93D /* Warranties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

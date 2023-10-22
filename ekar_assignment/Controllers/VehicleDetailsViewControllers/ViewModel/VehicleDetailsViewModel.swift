@@ -30,7 +30,7 @@ extension VehicleDetailsViewModel {
     private func makeDataSource() {
         self.dataSource.removeAll()
         
-        let imagesCellModel = VehicleImageTableViewCellModel(imagesArray: ["",""], year: self.carDetails?.attributes?.year)
+        let imagesCellModel = VehicleImageTableViewCellModel(imagesArray: ["1","2"], year: self.carDetails?.attributes?.year)
         dataSource.append(imagesCellModel)
         
         let priceCellModel = PriceTableViewCellModel(price: "1,500", months: "3")
@@ -41,6 +41,9 @@ extension VehicleDetailsViewModel {
         
         let feeCellModel = BookingFeeTableViewCellModel(bookingFee: "150")
         dataSource.append(feeCellModel)
+        
+        let aboutVehicleCellModel = AboutVehicleTableViewCellModel(engineCapacity: "3L", seats: carDetails?.attributes?.standardSeating ?? "", transmission: "Automatic", fuel: "Petrol")
+        dataSource.append(aboutVehicleCellModel)
         
         self.dataSourceCreated.send(true)
     }
@@ -76,10 +79,12 @@ extension VehicleDetailsViewModel {
     
     private func getCarDetails() {
         
+        Loader.shared.show()
         guard let url = URL(string: "https://api.carsxe.com/specs?key=tha91z6lv_j8u1nv4xs_ilfswb1e3&vin=JTDZN3EU0E3298500") else { return }
         NetworkManager.shared.makeCall(url: url)
             .receive(on: DispatchQueue.main)
             .sink { completion in
+                Loader.shared.hide()
                 switch completion {
                 case .finished:
                     print("Finished")
@@ -88,6 +93,7 @@ extension VehicleDetailsViewModel {
                 }
             } receiveValue: { [unowned self] (data: CarDetailsBaseModel) in
                 self.carDetails = data
+                self.carDetailsFetched.send(true)
                 self.makeDataSource()
             }
             .store(in: &cancellables)

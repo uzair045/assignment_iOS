@@ -55,16 +55,16 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1a-us-WrB">
-                        <rect key="frame" x="148.33333333333337" y="31" width="197.66666666666663" height="45"/>
+                        <rect key="frame" x="158.33333333333337" y="31" width="187.66666666666663" height="45"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="how contract works?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-Vg-pyr">
-                                <rect key="frame" x="20" y="10" width="157.66666666666666" height="25"/>
+                                <rect key="frame" x="15" y="7" width="157.66666666666666" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.45882352939999999" green="0.77647058820000003" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y4-oL-3jU">
-                                <rect key="frame" x="0.0" y="0.0" width="197.66666666666666" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="45"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <connections>
                                     <action selector="howItWorksTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fQe-6M-W40"/>
@@ -77,11 +77,11 @@
                             <constraint firstItem="5y4-oL-3jU" firstAttribute="top" secondItem="A1a-us-WrB" secondAttribute="top" id="Glx-vP-pgY"/>
                             <constraint firstItem="5y4-oL-3jU" firstAttribute="leading" secondItem="A1a-us-WrB" secondAttribute="leading" id="JXF-pt-6tN"/>
                             <constraint firstAttribute="bottom" secondItem="5y4-oL-3jU" secondAttribute="bottom" id="K2w-cs-VJF"/>
-                            <constraint firstItem="b4e-Vg-pyr" firstAttribute="top" secondItem="A1a-us-WrB" secondAttribute="top" constant="10" id="SEr-LJ-80c"/>
-                            <constraint firstItem="b4e-Vg-pyr" firstAttribute="leading" secondItem="A1a-us-WrB" secondAttribute="leading" constant="20" id="UZt-6r-fbG"/>
-                            <constraint firstAttribute="trailing" secondItem="b4e-Vg-pyr" secondAttribute="trailing" constant="20" id="ehM-xd-llu"/>
+                            <constraint firstItem="b4e-Vg-pyr" firstAttribute="top" secondItem="A1a-us-WrB" secondAttribute="top" constant="7" id="SEr-LJ-80c"/>
+                            <constraint firstItem="b4e-Vg-pyr" firstAttribute="leading" secondItem="A1a-us-WrB" secondAttribute="leading" constant="15" id="UZt-6r-fbG"/>
+                            <constraint firstAttribute="trailing" secondItem="b4e-Vg-pyr" secondAttribute="trailing" constant="15" id="ehM-xd-llu"/>
                             <constraint firstAttribute="trailing" secondItem="5y4-oL-3jU" secondAttribute="trailing" id="pWU-yt-ZJm"/>
-                            <constraint firstAttribute="bottom" secondItem="b4e-Vg-pyr" secondAttribute="bottom" constant="10" id="udd-eG-7KJ"/>
+                            <constraint firstAttribute="bottom" secondItem="b4e-Vg-pyr" secondAttribute="bottom" constant="7" id="udd-eG-7KJ"/>
                         </constraints>
                     </view>
                 </subviews>

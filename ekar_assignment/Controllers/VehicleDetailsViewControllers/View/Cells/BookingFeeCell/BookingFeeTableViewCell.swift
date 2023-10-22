@@ -30,8 +30,8 @@ class BookingFeeTableViewCell: StandardCell {
 extension BookingFeeTableViewCell {
     private func setupUI() {
         howContractWorksView.layer.borderWidth = 1
-        howContractWorksView.layer.borderColor = UIColor.systemBlue.cgColor //UIColor(red: 226/255, green: 246/255, blue: 255/255, alpha: 1).cgColor
-        howContractWorksView.layer.cornerRadius = 4
+        howContractWorksView.layer.borderColor = UIColor.systemBlue.cgColor
+        howContractWorksView.layer.cornerRadius = 5
     }
 }
 

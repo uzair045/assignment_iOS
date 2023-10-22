@@ -12,7 +12,11 @@ final class VehicleDetailsViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomContainerView: UIView!
     @IBOutlet weak var carNameLabel: UILabel!
+    @IBOutlet weak var carTypeLabel: UILabel!
+    
+    @IBOutlet weak var proceedButton: UIButton!
     
     // MARK: - Attributes
     let viewModel = VehicleDetailsViewModel()
@@ -32,15 +36,19 @@ extension VehicleDetailsViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        setupShadow()
+        
         self.navigationItem.setBackButton()
         self.navigationItem.setTitleImage()
         
         viewModel.configure()
+        
+        self.proceedButton.layer.cornerRadius = 5
     }
     
     fileprivate func bindViewModelToView() {
         self.viewModel.carDetailsFetched.sink { [unowned self] (status) in
-            self.reloadData()
+            self.setCarDetails()
         }.store(in: &cancellables)
         
         self.viewModel.dataSourceCreated.sink { [unowned self] (status) in
@@ -57,12 +65,31 @@ extension VehicleDetailsViewController {
         identifiers.forEach({tableView.register(UINib(nibName: $0, bundle: nil), forCellReuseIdentifier: $0)})
         tableView.reloadData()
     }
+    
+    private func setCarDetails() {
+        if let carDetails = viewModel.carDetails {
+            self.carNameLabel.text = carDetails.attributes?.model
+            self.carTypeLabel.text = carDetails.attributes?.style
+        }
+    }
+    
+    private func setupShadow() {
+        
+        // Set shadow properties
+        bottomContainerView.layer.shadowColor = UIColor.black.cgColor
+        bottomContainerView.layer.shadowOpacity = 0.5
+        bottomContainerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        bottomContainerView.layer.shadowRadius = 4
+    }
 }
 
 // MARK: - IBActions
 extension VehicleDetailsViewController {
     @IBAction func proceedButtonTapped(_ sender: UIButton) {
-        
+        let vc = OnboardViewController.instantiate(fromAppStoryboard: .main)
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overFullScreen
+        self.present(nav, animated: true)
     }
 }
 
@@ -87,9 +114,5 @@ extension VehicleDetailsViewController: UITableViewDataSource {
 extension VehicleDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
